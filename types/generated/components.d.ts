@@ -1,14 +1,24 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedBenefit extends Struct.ComponentSchema {
+  collectionName: 'components_shared_benefits';
+  info: {
+    displayName: 'benefit';
+    icon: 'apps';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<['trial', 'gift', 'warranty']>;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
     displayName: 'Media';
     icon: 'file-video';
   };
-  attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-  };
+  attributes: {};
 }
 
 export interface SharedQuote extends Struct.ComponentSchema {
@@ -62,14 +72,28 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSpecification extends Struct.ComponentSchema {
+  collectionName: 'components_shared_specifications';
+  info: {
+    displayName: 'Specification';
+    icon: 'apps';
+  };
+  attributes: {
+    key: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.benefit': SharedBenefit;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.specification': SharedSpecification;
     }
   }
 }

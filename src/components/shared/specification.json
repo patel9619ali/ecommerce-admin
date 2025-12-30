@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_specifications",
+  "info": {
+    "displayName": "Specification",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

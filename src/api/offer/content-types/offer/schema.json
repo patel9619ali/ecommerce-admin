@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "discountType": {
+      "type": "enumeration",
+      "enum": [
+        "FLAT",
+        "PERCENTAGE"
+      ]
+    },
+    "discountValue": {
+      "type": "biginteger"
+    },
+    "bank": {
+      "type": "string"
+    },
+    "validTill": {
+      "type": "date"
+    },
+    "applicableVariants": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::variant.variant"
+    }
+  }
+}
