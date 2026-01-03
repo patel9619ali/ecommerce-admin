@@ -518,6 +518,37 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEmailOtpEmailOtp extends Struct.CollectionTypeSchema {
+  collectionName: 'email_otps';
+  info: {
+    displayName: 'email-otp';
+    pluralName: 'email-otps';
+    singularName: 'email-otp';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.Email;
+    expiresAt: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::email-otp.email-otp'
+    > &
+      Schema.Attribute.Private;
+    otp: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    used: Schema.Attribute.Boolean;
+  };
+}
+
 export interface ApiEmiOptionEmiOption extends Struct.CollectionTypeSchema {
   collectionName: 'emi_options';
   info: {
@@ -1269,6 +1300,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::brand.brand': ApiBrandBrand;
       'api::category.category': ApiCategoryCategory;
+      'api::email-otp.email-otp': ApiEmailOtpEmailOtp;
       'api::emi-option.emi-option': ApiEmiOptionEmiOption;
       'api::global.global': ApiGlobalGlobal;
       'api::offer.offer': ApiOfferOffer;
