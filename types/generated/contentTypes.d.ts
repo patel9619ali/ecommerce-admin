@@ -742,6 +742,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    variant: Schema.Attribute.Relation<'oneToMany', 'api::variant.variant'>;
     warrantyText: Schema.Attribute.String;
   };
 }
@@ -757,13 +758,12 @@ export interface ApiVariantVariant extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Benefits: Schema.Attribute.Component<'shared.benefit', true>;
     colorHex: Schema.Attribute.String;
     colorName: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    discountPercent: Schema.Attribute.Integer;
+    discountPercent: Schema.Attribute.Decimal;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -778,6 +778,7 @@ export interface ApiVariantVariant extends Struct.CollectionTypeSchema {
     mrp: Schema.Attribute.BigInteger;
     product: Schema.Attribute.Relation<'oneToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
+    ReturnsAndWarranty: Schema.Attribute.Component<'shared.benefit', true>;
     sellingPrice: Schema.Attribute.BigInteger;
     sku: Schema.Attribute.String;
     stock: Schema.Attribute.Integer;

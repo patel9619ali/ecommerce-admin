@@ -13,7 +13,7 @@ export default {
       },
       settings: {
         defaultFrom: process.env.SMTP_USER || "startup.by1234@gmail.com",
-        defaultReplyTo: "support@yourapp.com",
+        defaultReplyTo: "sameeran7608@gmail.com",
       },
     },
   },

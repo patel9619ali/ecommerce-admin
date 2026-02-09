@@ -32,7 +32,7 @@
       "type": "biginteger"
     },
     "discountPercent": {
-      "type": "integer"
+      "type": "decimal"
     },
     "stock": {
       "type": "integer"
@@ -50,7 +50,7 @@
     "isDefault": {
       "type": "boolean"
     },
-    "Benefits": {
+    "ReturnsAndWarranty": {
       "type": "component",
       "component": "shared.benefit",
       "repeatable": true

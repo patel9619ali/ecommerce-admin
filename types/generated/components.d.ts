@@ -3,11 +3,11 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface SharedBenefit extends Struct.ComponentSchema {
   collectionName: 'components_shared_benefits';
   info: {
-    displayName: 'benefit';
+    displayName: 'ReturnsAndWarranty';
     icon: 'apps';
   };
   attributes: {
-    icon: Schema.Attribute.Enumeration<['trial', 'gift', 'warranty']>;
+    images: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String;
   };
 }

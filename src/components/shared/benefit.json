@@ -1,7 +1,7 @@
 {
   "collectionName": "components_shared_benefits",
   "info": {
-    "displayName": "benefit",
+    "displayName": "ReturnsAndWarranty",
     "icon": "apps"
   },
   "options": {},
@@ -9,12 +9,14 @@
     "label": {
       "type": "string"
     },
-    "icon": {
-      "type": "enumeration",
-      "enum": [
-        "trial",
-        "gift",
-        "warranty"
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
     }
   },
