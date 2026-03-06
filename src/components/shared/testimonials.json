@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_testimonials",
+  "info": {
+    "displayName": "Testimonials",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "TestimonialsDetails": {
+      "type": "component",
+      "component": "shared.testimonials-details",
+      "repeatable": true
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

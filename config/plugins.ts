@@ -11,6 +11,10 @@ export default ({ env }) => ({
           pass: env("SMTP_PASS"),
         },
       },
+      settings: {
+        defaultFrom: process.env.SMTP_USER || "startup.by1234@gmail.com",
+        defaultReplyTo: "sameeran7608@gmail.com",
+      },
     },
   },
 

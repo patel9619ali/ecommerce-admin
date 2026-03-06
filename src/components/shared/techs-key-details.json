@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_techs_key_details",
+  "info": {
+    "displayName": "TechsKeyDetails",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "TechsDetails": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "TechsKey": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

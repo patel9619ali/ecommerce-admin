@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_tech_specifications",
+  "info": {
+    "displayName": "TechSpecifications",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "MainTitle": {
+      "type": "string"
+    },
+    "MainDescriptions": {
+      "type": "text"
+    },
+    "MainImage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "TechsKeyDetails": {
+      "type": "component",
+      "component": "shared.techs-key-details",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

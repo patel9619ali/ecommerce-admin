@@ -5,13 +5,6 @@
     "icon": "apps"
   },
   "options": {},
-  "attributes": {
-    "key": {
-      "type": "string"
-    },
-    "value": {
-      "type": "string"
-    }
-  },
+  "attributes": {},
   "config": {}
 }

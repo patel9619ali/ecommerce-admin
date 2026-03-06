@@ -57,6 +57,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::variant.variant"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.why-choose-us",
+        "shared.testimonials",
+        "shared.tech-specifications",
+        "shared.seo",
+        "shared.benefit"
+      ]
     }
   }
 }

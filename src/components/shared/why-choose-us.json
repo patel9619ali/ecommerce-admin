@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_why_chooseuses",
+  "info": {
+    "displayName": "WhyChooseUs",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "WhyChooseUsDetails": {
+      "type": "component",
+      "component": "shared.why-choose-us-details",
+      "repeatable": true
+    },
+    "MainTitle": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

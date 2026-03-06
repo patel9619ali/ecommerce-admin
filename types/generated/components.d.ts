@@ -78,9 +78,119 @@ export interface SharedSpecification extends Struct.ComponentSchema {
     displayName: 'Specification';
     icon: 'apps';
   };
+  attributes: {};
+}
+
+export interface SharedTechSpecifications extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tech_specifications';
+  info: {
+    displayName: 'TechSpecifications';
+    icon: 'apps';
+  };
   attributes: {
-    key: Schema.Attribute.String;
-    value: Schema.Attribute.String;
+    MainDescriptions: Schema.Attribute.Text;
+    MainImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    MainTitle: Schema.Attribute.String;
+    TechsKeyDetails: Schema.Attribute.Component<
+      'shared.techs-key-details',
+      true
+    >;
+  };
+}
+
+export interface SharedTechsKeyDetails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_techs_key_details';
+  info: {
+    displayName: 'TechsKeyDetails';
+    icon: 'arrowRight';
+  };
+  attributes: {
+    TechsDetails: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    TechsKey: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials';
+  info: {
+    displayName: 'Testimonials';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    subTitle: Schema.Attribute.String;
+    TestimonialsDetails: Schema.Attribute.Component<
+      'shared.testimonials-details',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTestimonialsDetails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials_details';
+  info: {
+    displayName: 'TestimonialsDetails';
+    icon: 'apps';
+  };
+  attributes: {
+    clientName: Schema.Attribute.String;
+    clientPlace: Schema.Attribute.String;
+    starCount: Schema.Attribute.Integer;
+    testimonialsDescription: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+  };
+}
+
+export interface SharedWhyChooseUs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_why_chooseuses';
+  info: {
+    displayName: 'WhyChooseUs';
+    icon: 'apps';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    MainTitle: Schema.Attribute.String;
+    WhyChooseUsDetails: Schema.Attribute.Component<
+      'shared.why-choose-us-details',
+      true
+    >;
+  };
+}
+
+export interface SharedWhyChooseUsDetails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_why_choose_us_details';
+  info: {
+    displayName: 'WhyChooseUsDetails';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    subTitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    WhyChooseUsImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -94,6 +204,12 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.specification': SharedSpecification;
+      'shared.tech-specifications': SharedTechSpecifications;
+      'shared.techs-key-details': SharedTechsKeyDetails;
+      'shared.testimonials': SharedTestimonials;
+      'shared.testimonials-details': SharedTestimonialsDetails;
+      'shared.why-choose-us': SharedWhyChooseUs;
+      'shared.why-choose-us-details': SharedWhyChooseUsDetails;
     }
   }
 }

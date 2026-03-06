@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_testimonials_details",
+  "info": {
+    "displayName": "TestimonialsDetails",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "starCount": {
+      "type": "integer"
+    },
+    "testimonialsDescription": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "clientPlace": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

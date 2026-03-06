@@ -50,10 +50,14 @@
     "isDefault": {
       "type": "boolean"
     },
-    "ReturnsAndWarranty": {
-      "type": "component",
-      "component": "shared.benefit",
-      "repeatable": true
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.tech-specifications",
+        "shared.benefit",
+        "shared.why-choose-us",
+        "shared.testimonials"
+      ]
     }
   }
 }
