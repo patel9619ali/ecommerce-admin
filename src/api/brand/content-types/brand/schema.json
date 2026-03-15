@@ -27,6 +27,12 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.testimonials"
+      ]
     }
   }
 }

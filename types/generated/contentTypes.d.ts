@@ -470,6 +470,7 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    blocks: Schema.Attribute.DynamicZone<['shared.testimonials']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
